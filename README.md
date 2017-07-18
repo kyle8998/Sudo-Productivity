@@ -12,3 +12,6 @@ fakeBitbake.sh, bitbake.sh, and bitbakeargs.txt. It works by outputting the
 normal bitbake text and some fake warnings and looping through an array of
 bitbake arguments. It then uses echo carriages to change the tasks that it is
 "bitbaking" to simulate that is it building something.
+
+<b>everything.sh</b> - Simply outputs everything from every file on your system.
+Use with Caution!

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+clear
 # echo bitbake text
 ./bitbake.sh
 # Pull bitbake args into array
@@ -25,10 +26,6 @@ run () {
         echo -en "\e[$1B"
 
         update
-        #task=$?
-        #task="$(update)"
-        #echo -en "\r\e[4A\e[KCurrently 3 running tasks ($task of ?):"
-        #echo -en "\e[4B"
 
     done
     echo
