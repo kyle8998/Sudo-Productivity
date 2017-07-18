@@ -7,9 +7,9 @@ clear
 mapfile -t arr < bitbakeargs.txt
 
 task=0
-echo "Currently 3 running tasks ($task of ?):"
+echo "Currently 5 running tasks ($task of ?):"
 
-threadlist='1 2 3'
+threadlist='1 2 3 4 5'
 # Fake threading using background processes
 run () {
     local t=$1
@@ -17,25 +17,40 @@ run () {
     echo $t
 
     while true
-    #for i in "${arr[@]}"
     do
-        i=$[ ( $RANDOM % 10 ) + 0 ]
-        #sleep 1
-        sleep $[ ( $RANDOM % 10 ) + 1 ]s
+        # Have the newer tasks complete faster
+        case "$1" in
+
+        5)  sleep $[ ( $RANDOM % 10 ) + 1 ]s
+            ;;
+        4)  sleep $[ ( $RANDOM % 9 ) + 1 ]s
+            ;;
+        3)  sleep $[ ( $RANDOM % 8 ) + 1 ]s
+            ;;
+        2)  sleep $[ ( $RANDOM % 5 ) + 1 ]s
+            ;;
+        1)  sleep $[ ( $RANDOM % 2 ) + 1 ]s
+            task=$((task+1))
+            echo -en "\r\e[6A\e[KCurrently 5 running tasks ($task of ?):"
+            echo -en "\e[6B"
+            ;;
+
+        esac
+
+        i=$[ ( $RANDOM % 50 ) + 0 ]
+
+        # Lock
+        (
+
+        flock -x -w 10 200 || exit 1
+
         echo -en "\r\e[$1A\e[K${arr[$i]}"
         echo -en "\e[$1B"
 
-        update
+        ) 200>/tmp/bitbakelock
 
     done
     echo
-}
-# Update counter
-update () {
-    task=$((task+1))
-    echo -en "\r\e[4A\e[KCurrently 3 running tasks ($task of ?):"
-    echo -en "\e[4B"
-   # return $((task+1))
 }
 # Create "threads"
 for t in $threadlist

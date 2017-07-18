@@ -3,7 +3,7 @@
 echo -e "
 Parsing recipes: 100% |############################################################################################################################################################################| Time: 00:01:44
 Parsing of 2747 .bb files complete (0 cached, 2747 parsed). 6533 targets, 1299 skipped, 0 masked, 0 errors.
-NOTE: Resolving any missing task queue dependencies
+\e[1mNOTE\e[0m: Resolving any missing task queue dependencies
 
 Build Configuration:
 BB_VERSION        = \"1.30.0\"
@@ -28,9 +28,9 @@ meta-security     = \"HEAD:a7ae942a5d2e5a41d4caf653ed074949a80a381e\"
 meta              = \"HEAD:350fd5d16888b3882b861ce955a3383e99420bd4\"
 meta-ros-qemu     = \"integ:191b95c4535f4859e986f0255a24ce85fd70c7ee\"
 
-NOTE: Preparing RunQueue
-NOTE: Executing SetScene Tasks
-NOTE: Executing RunQueue Tasks
+\e[1mNOTE\e[0m: Preparing RunQueue
+\e[1mNOTE\e[0m: Executing SetScene Tasks
+\e[1mNOTE\e[0m: Executing RunQueue Tasks
 \e[33mWARNING: gnu-config-native-20150728+gitAUTOINC+b576fa87c1-r0 do_fetch: Failed to fetch URL git://git.sv.gnu.org/config.git, attempting MIRRORS if available
 WARNING: pkgconfig-native-0.29+gitAUTOINC+5914edfe96-r0 do_fetch: Failed to fetch URL git://anongit.freedesktop.org/pkg-config, attempting MIRRORS if available
 WARNING: zlib-native-1.2.8-r0 do_fetch: Failed to fetch URL http://www.zlib.net/zlib-1.2.8.tar.xz, attempting MIRRORS if available

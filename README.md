@@ -13,5 +13,7 @@ normal bitbake text and some fake warnings and looping through an array of
 bitbake arguments. It then uses echo carriages to change the tasks that it is
 "bitbaking" to simulate that is it building something.
 
+Note: Must use "pkill bash" to end due to background processes
+
 <b>everything.sh</b> - Simply outputs everything from every file on your system.
 Use with Caution!
