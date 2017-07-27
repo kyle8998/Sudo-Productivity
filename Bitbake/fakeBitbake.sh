@@ -1,18 +1,40 @@
 #!/usr/bin/env bash
 
 clear
+
+progress='#'
+number=0
+space="                                                                                                     "
+time=10
+echo
+for i in {1..101}
+do
+    echo -ne "\rParsing Recipes: $number% |$progress$space| Time: 00:00:$time"
+    progress+="#"
+    space="${space::-1}"
+    number=$((number+1))
+    sleep .05
+    if [[ $i%10 -eq 0 ]]
+    then
+        time=$((time-1))
+    fi
+    if [[ $i -eq 101 ]]
+    then
+        echo
+    fi
+done
+
 # echo bitbake text
-./bitbake.sh
+./initial.sh
 # Pull bitbake args into array
 mapfile -t arr < bitbakeargs.txt
 
 task=0
 NUMTASKS=2586
 RAND=0
+echo "Currently 8 running tasks ($task of $NUMTASKS):"
 
-echo "Currently 7 running tasks ($task of $NUMTASKS):"
-
-threadlist='1 2 3 4 5 6 7'
+threadlist='1 2 3 4 5 6 7 8'
 # Fake threading using background processes
 run () {
     local t=$1
@@ -24,26 +46,29 @@ run () {
         # Have the newer tasks complete faster
         case "$1" in
 
-        7)  sleep $[ ( $RANDOM % 50 ) + 1 ]s
+        8)  sleep $[ ( $RANDOM % 50 ) + 1 ]s
             index=0
             ;;
-        6)  sleep $[ ( $RANDOM % 25 ) + 1 ]s
+        7)  sleep $[ ( $RANDOM % 35 ) + 1 ]s
             index=1
             ;;
-        5)  sleep $[ ( $RANDOM % 15 ) + 1 ]s
+        6)  sleep $[ ( $RANDOM % 25 ) + 1 ]s
             index=2
             ;;
-        4)  sleep $[ ( $RANDOM % 10 ) + 1 ]s
+        5)  sleep $[ ( $RANDOM % 15 ) + 1 ]s
             index=3
             ;;
-        3)  sleep $[ ( $RANDOM % 8 ) + 1 ]s
+        4)  sleep $[ ( $RANDOM % 10 ) + 1 ]s
             index=4
             ;;
-        2)  sleep $[ ( $RANDOM % 4 ) + 1 ]s
+        3)  sleep $[ ( $RANDOM % 8 ) + 1 ]s
             index=5
             ;;
-        1)  sleep $[ ( $RANDOM % 2 ) + 0 ]s
+        2)  sleep $[ ( $RANDOM % 4 ) + 1 ]s
             index=6
+            ;;
+        1)  sleep $[ ( $RANDOM % 2 ) + 0 ]s
+            index=7
             # Task only counted by last line
             # Not accurate, may be fixed in future
             task=$((task+1))
@@ -70,8 +95,8 @@ run () {
         if [ $1 -eq 1 ]
         then
             RAND=$(($RANDOM % 2))
-            echo -en "\r\e[8A\e[KCurrently 7 running tasks ($task of $NUMTASKS):"
-            echo -en "\e[8B"
+            echo -en "\r\e[9A\e[KCurrently 8 running tasks ($task of $NUMTASKS):"
+            echo -en "\e[9B"
         fi
 
         if [ $RAND -eq 0 ]
@@ -82,8 +107,8 @@ run () {
         else
             echo -en "\r\e[$1A\e[K"
             echo -en "\e[$1B"
-            echo -en "\r\e[8A\e[KCurrently 6 running tasks ($task of $NUMTASKS):"
-            echo -en "\e[8B"
+            echo -en "\r\e[9A\e[KCurrently 7 running tasks ($task of $NUMTASKS):"
+            echo -en "\e[9B"
         fi
 
         ) 200>/tmp/bitbakelock

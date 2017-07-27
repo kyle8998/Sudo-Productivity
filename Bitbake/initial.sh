@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 echo -e "
-Parsing recipes: 100% |############################################################################################################################################################################| Time: 00:01:44
 Parsing of 2747 .bb files complete (0 cached, 2747 parsed). 6533 targets, 1299 skipped, 0 masked, 0 errors.
 \e[1mNOTE\e[0m: Resolving any missing task queue dependencies
 

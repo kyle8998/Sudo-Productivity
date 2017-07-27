@@ -12,6 +12,17 @@ bitbake arguments. It then uses echo carriages to change the tasks that it is
 Note: Must use "pkill bash" to end due to background processes. This may crash
 other programs that are running bash. Use with caution!
 
+<b>printBitbake.sh</b> - Less sophisticated bitbake simulation. Simply prints
+out bitbake. No background processes involved.
+
+##### Bitbake File Dependencies
+
+bitbakeArgs.txt - Contains all bitbake arguments for fakeBitbake.sh
+
+initial.sh - Script that prints out initial burst for fakeBitbake.sh
+
+pipedBitbake.txt - Contains the content for printBitbake.sh
+
 --------------------------------------------------------------------------------
 
 ### NeuralNetwork
