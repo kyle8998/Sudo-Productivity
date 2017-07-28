@@ -13,7 +13,10 @@ do
     progress+="#"
     space="${space::-1}"
     number=$((number+1))
-    sleep .05
+
+    sleepTime=$(bc <<< "scale=2; $(printf '0.%02d' $(( $RANDOM % 100))) / 2")
+    sleep $sleepTime
+
     if [[ $i%10 -eq 0 ]]
     then
         time=$((time-1))
@@ -39,7 +42,7 @@ threadlist='1 2 3 4 5 6 7 8'
 run () {
     local t=$1
     local i
-    echo $t
+    echo $(( $t - 1 )): ${arr[$[ ( $RANDOM % 50 ) + 0 ]]}
 
     while true
     do
@@ -49,22 +52,22 @@ run () {
         8)  sleep $[ ( $RANDOM % 50 ) + 1 ]s
             index=0
             ;;
-        7)  sleep $[ ( $RANDOM % 35 ) + 1 ]s
+        7)  sleep $[ ( $RANDOM % 30 ) + 1 ]s
             index=1
             ;;
-        6)  sleep $[ ( $RANDOM % 25 ) + 1 ]s
+        6)  sleep $[ ( $RANDOM % 20 ) + 1 ]s
             index=2
             ;;
-        5)  sleep $[ ( $RANDOM % 15 ) + 1 ]s
+        5)  sleep $[ ( $RANDOM % 12 ) + 1 ]s
             index=3
             ;;
-        4)  sleep $[ ( $RANDOM % 10 ) + 1 ]s
+        4)  sleep $[ ( $RANDOM % 8 ) + 1 ]s
             index=4
             ;;
-        3)  sleep $[ ( $RANDOM % 8 ) + 1 ]s
+        3)  sleep $[ ( $RANDOM % 4 ) + 1 ]s
             index=5
             ;;
-        2)  sleep $[ ( $RANDOM % 4 ) + 1 ]s
+        2)  sleep $[ ( $RANDOM % 3 ) + 1 ]s
             index=6
             ;;
         1)  sleep $[ ( $RANDOM % 2 ) + 0 ]s
@@ -123,3 +126,5 @@ do
     run "$t" &
 done
 
+# Hides the command line
+sleep 10000

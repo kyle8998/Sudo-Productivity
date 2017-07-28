@@ -9,8 +9,9 @@ normal bitbake text and some fake warnings and looping through an array of
 bitbake arguments. It then uses echo carriages to change the tasks that it is
 "bitbaking" to simulate that is it building something.
 
-Note: Must use "pkill bash" to end due to background processes. This may crash
-other programs that are running bash. Use with caution!
+Note: Must use CTRL+C then type "pkill bash" to end due to background processes.
+This may crash other programs (including real bitbake!) that are running bash.
+Use with caution!
 
 <b>printBitbake.sh</b> - Less sophisticated bitbake simulation. Simply prints
 out bitbake. No background processes involved.
