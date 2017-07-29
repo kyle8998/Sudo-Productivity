@@ -40,6 +40,13 @@ training process with the outputs, weights, and error calculations.
 
 --------------------------------------------------------------------------------
 
+<b>codeReview.rb</b> - Retrieves random code from codereview and outputs it in a
+way that makes it look like you are typing the code.
+
+Dependency: Ruby 2.1.0+ and Nokogiri gem
+
+--------------------------------------------------------------------------------
+
 <b>everything.sh</b> - Simply outputs everything from every file on your system.
 Use with caution!
 
