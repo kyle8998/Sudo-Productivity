@@ -57,6 +57,11 @@ including them with a gcc flag.
 
 --------------------------------------------------------------------------------
 
+<b>hackerTyper.rb</b> - Retrieves random code from hackertyper and outputs it in
+a way that makes it look like you are typing the code.
+
+--------------------------------------------------------------------------------
+
 <b>hexSearch.sh</b> - Randomly outputs hexidecimal numbers and highlights
 random numbers to make it simulate a search.
 
