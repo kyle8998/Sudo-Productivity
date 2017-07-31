@@ -5,22 +5,31 @@ clear
 progress='#'
 number=0
 space="                                                                                                     "
-time=10
+timeOne=2
+timeTwo=0
 echo
+# The progress bar 'Parsing Recipes'
 for i in {1..101}
 do
-    echo -ne "\rParsing Recipes: $number% |$progress$space| Time: 00:00:$time"
+    echo -ne "\rParsing Recipes: $number% | $progress$space| Time: 00:00:$timeOne$timeTwo"
     progress+="#"
     space="${space::-1}"
     number=$((number+1))
-
+    # Randomize loading time
     sleepTime=$(bc <<< "scale=2; $(printf '0.%02d' $(( $RANDOM % 100))) / 2")
     sleep $sleepTime
-
-    if [[ $i%10 -eq 0 ]]
+    # Time tracking (Hardcoded to 20 seconds for now)
+    if [[ $i%5 -eq 0 ]]
     then
-        time=$((time-1))
+        if [[ $timeTwo -eq 0 ]]
+        then
+            timeOne=$((timeOne-1))
+            timeTwo=9
+        else
+            timeTwo=$((timeTwo-1))
+        fi
     fi
+
     if [[ $i -eq 101 ]]
     then
         echo
