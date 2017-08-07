@@ -1,6 +1,26 @@
 # Fake-Work
 Make it look like you're working
 
+### Automated Test System (ATS)
+
+<b>ATS.sh</b> - Simulates an Automated Test System. Uses tmux to open 4 panes to
+run a keyserver, master, and slave in "docker"
+
+Note: Run tmux before running the script! To exit, use tmux prefix & y to kill.
+(prefix is default ctrl+b)
+
+##### ATS File Dependencies
+
+keyServer.sh - Key server output
+
+master.sh - Master output
+
+slave.sh - Slave output
+
+trigger.sh - Request trigger output
+
+--------------------------------------------------------------------------------
+
 ### Bitbake
 
 <b>fakeBitbake.sh</b> - Simulates a bitbake build. It requires the three files:
