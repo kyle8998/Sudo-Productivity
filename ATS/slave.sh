@@ -12,7 +12,7 @@ echo wfc:
 echo wfs: localhost
 echo wfsp: 5000
 
-for i in {1..100}
+for i in {1..10}
 do
     sleep 1
     echo courier: noCourier
