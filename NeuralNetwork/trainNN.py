@@ -18,7 +18,7 @@ class NeuralNetwork():
 
     # Training
     def train(self, training_set_inputs, training_set_outputs, number_of_training_iterations):
-        for i in xrange(number_of_training_iterations):
+        for i in range(number_of_training_iterations):
             # Pass training set
             output_from_layer_1, output_from_layer_2 = self.think(training_set_inputs)
             # Calculate error
@@ -39,7 +39,7 @@ class NeuralNetwork():
         output_from_layer1 = self.__sigmoid(dot(inputs, self.layer1.synaptic_weights))
         output_from_layer2 = self.__sigmoid(dot(output_from_layer1, self.layer2.synaptic_weights))
         # Useless output to print
-        print output_from_layer1
+        print (output_from_layer1)
         return output_from_layer1, output_from_layer2
 
 if __name__ == "__main__":
@@ -59,10 +59,10 @@ if __name__ == "__main__":
     training_set_inputs = array([[0, 0, 1], [0, 1, 1], [1, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1], [0, 0, 0]])
     training_set_outputs = array([[0, 1, 1, 1, 1, 0, 0]]).T
     # Train
-    print "Training Neural Network"
+    print ("Training Neural Network")
     neural_network.train(training_set_inputs, training_set_outputs, 1000000)
 
     # Test the neural network with a new situation.
-    print "Considering a new situation [1, 1, 0] -> ?: "
+    print ("Considering a new situation [1, 1, 0] -> ?: ")
     hidden_state, output = neural_network.think(array([1, 1, 0]))
-    print output
+    print (output)

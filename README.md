@@ -1,5 +1,10 @@
-# Fake-Work
-Make it look like you're working
+# Pseudo-Productivity
+Boost your "productivity" to the max! A project made for slackers by slackers.
+
+**Note** This project was made just for fun. I do not condone use of these programs
+in a professional work environment.
+
+Created by: Kyle Lim
 
 ### Automated Test System (ATS)
 
@@ -8,6 +13,8 @@ run a keyserver, master, and slave in "docker"
 
 Note: Run tmux before running the script! To exit, use tmux prefix & y to kill.
 (prefix is default ctrl+b)
+
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/ATS.PNG)
 
 ##### ATS File Dependencies
 
@@ -36,6 +43,8 @@ Use with caution!
 <b>printBitbake.sh</b> - Less sophisticated bitbake simulation. Simply prints
 out bitbake. No background processes involved.
 
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/bitbake.PNG)
+
 ##### Bitbake File Dependencies
 
 bitbakeArgs.txt - Contains all bitbake arguments for fakeBitbake.sh
@@ -48,8 +57,6 @@ pipedBitbake.txt - Contains the content for printBitbake.sh
 
 ### NeuralNetwork
 
-<b>Dependency:</b> Must have Numpy python module installed
-
 <b>trainNN.py</b> - Creates a neural network and trains it to solve the XOR
 problem. The catch is that it outputs its training process every cycle for
 a million cycles.
@@ -58,10 +65,16 @@ a million cycles.
 random training sets which ultimately leads to useless data. It outputs the
 training process with the outputs, weights, and error calculations.
 
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/nn.PNG)
+
+<b>Dependency:</b> Must have Numpy python module installed
+
 --------------------------------------------------------------------------------
 
 <b>codeReview.rb</b> - Retrieves random code from codereview and outputs it in a
 way that makes it look like you are typing the code.
+
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/codereview.PNG)
 
 Dependency: Ruby 2.1.0+ and Nokogiri gem
 
@@ -85,4 +98,8 @@ a way that makes it look like you are typing the code.
 <b>hexSearch.sh</b> - Randomly outputs hexidecimal numbers and highlights
 random numbers to make it simulate a search.
 
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/hexsearch.PNG)
+
 --------------------------------------------------------------------------------
+
+More coming soon!
