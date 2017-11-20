@@ -14,7 +14,7 @@ run a keyserver, master, and slave in "docker"
 Note: Run tmux before running the script! To exit, use tmux prefix & y to kill.
 (prefix is default ctrl+b)
 
-![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/ATS.PNG)
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/ATS.gif)
 
 ##### ATS File Dependencies
 
@@ -43,7 +43,7 @@ Use with caution!
 <b>printBitbake.sh</b> - Less sophisticated bitbake simulation. Simply prints
 out bitbake. No background processes involved.
 
-![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/bitbake.PNG)
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/Bitbake.gif)
 
 ##### Bitbake File Dependencies
 
@@ -65,7 +65,7 @@ a million cycles.
 random training sets which ultimately leads to useless data. It outputs the
 training process with the outputs, weights, and error calculations.
 
-![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/nn.PNG)
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/nn.gif)
 
 <b>Dependency:</b> Must have Numpy python module installed
 
@@ -74,7 +74,7 @@ training process with the outputs, weights, and error calculations.
 <b>codeReview.rb</b> - Retrieves random code from codereview and outputs it in a
 way that makes it look like you are typing the code.
 
-![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/codereview.PNG)
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/codereview.gif)
 
 Dependency: Ruby 2.1.0+ and Nokogiri gem
 
@@ -98,7 +98,7 @@ a way that makes it look like you are typing the code.
 <b>hexSearch.sh</b> - Randomly outputs hexidecimal numbers and highlights
 random numbers to make it simulate a search.
 
-![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/hexsearch.PNG)
+![ATS](https://raw.githubusercontent.com/kyle8998/Pseudo-Productivity/master/img/hexsearch.gif)
 
 --------------------------------------------------------------------------------
 
