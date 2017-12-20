@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
-site = "http://codereview.stackexchange.com/"
+site = "https://codereview.stackexchange.com/"
 system 'cls'
 system("color 0a")
 5.times do

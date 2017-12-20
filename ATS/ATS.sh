@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 #tmux new-session -s "testing"
 #tmux select-window -t testing:0
