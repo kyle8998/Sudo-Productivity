@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+usage() {
+    echo
+    echo "Sudo Productivity - A Productivity Suite Made For Slackers!"
+    echo
+    echo "./Productivity [-abcfhns]"
+    echo
+    echo "Flags:"
+    echo "-a - Automated Testing System"
+    echo "-b - Bitbake"
+    echo "-c - Code Review"
+    echo "-f - Fake Compilation"
+    echo "-h - Help Manual"
+    echo "-n - Neural Network"
+    echo "-s - Searching Random Hex Values"
+    echo
+}
+
+while getopts ":abcfhns" opt; do
+    if [ $OPTIND -eq 1 -o $OPTIND -gt 2 ]
+    then
+        echo -e "\e[33mToo many flags entered\e[39m"
+        usage
+        exit -1
+    fi
+    case $opt in
+        a)
+            echo "Starting Automated Testing System..." >&2
+            cd ATS
+            ./ATS.sh
+            if [ $? -eq 1 ]
+            then
+                echo -e "\e[33mPlease enable tmux before you run the ATS!\e[39m"
+            fi
+            ;;
+        b)
+            echo "Bitbaking..."
+            cd Bitbake
+            ./fakeBitbake.sh
+            ;;
+        c)
+            echo "Beginning Code Review..."
+            ruby codeReview.rb
+            ;;
+        f)
+            echo "Compiling..."
+            ./fakeCompilation.sh
+            ;;
+        h)
+            usage
+            ;;
+        n)
+            echo "Starting Neural Network"
+            cd NeuralNetwork
+            python3 trainNN.py
+            ;;
+        s)
+            echo "Searching Hex..."
+            ./hexSearch.sh
+            ;;
+
+        \?)
+            echo -e "\e[33mInvalid option: -$OPTARG\e[39m" >&2
+            usage
+            ;;
+    esac
+    exit
+done
+
+echo -e "\e[33mNo flags provided!\e[39m"
+usage
+exit
+

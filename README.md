@@ -1,10 +1,24 @@
-# Pseudo-Productivity
-Boost your "productivity" to the max! A project made for slackers by slackers.
+# Sudo-Productivity
+Boost your "productivity" to the max! A productivity suite made for slackers by slackers.
 
 **Note** This project was made just for fun. I do not condone use of these programs
 in a professional work environment.
 
 Created by: Kyle Lim
+
+## How to Run
+
+Clone the repository to your local machine
+
+```
+git clone https://github.com/kyle8998/Sudo-Productivity
+```
+
+Run the suite with a flag
+
+```
+./productivity [-abcfhns]
+```
 
 ### Automated Test System (ATS)
 
