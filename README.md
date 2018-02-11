@@ -6,6 +6,14 @@ in a professional work environment.
 
 Created by: Kyle Lim
 
+[![forthebadge](https://forthebadge.com/badges/powered-by-responsibility.svg)](http://forthebadge.com)
+
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+<a href="https://github.com/kyle8998/sudo-productivity/commits/master"> <img src="https://img.shields.io/github/last-commit/kyle8998/sudo-productivity.svg?label=last%20deployed" alt="last deployed"></a>
+[![GitHub issues](https://img.shields.io/github/issues/kyle8998/sudo-productivity.svg "GitHub issues")](https://github.com/kyle8998/sudo-productivity/issues)
+[![GitHub stars](https://img.shields.io/github/stars/kyle8998/sudo-productivity.svg "GitHub stars")](https://github.com/kyle8998/sudo-productivity/stargazers)
+[![HitCount](http://hits.dwyl.io/kyle8998/sudo-productivity.svg)](http://hits.dwyl.io/kyle8998/sudo-productivity)
+
 ## How to Run
 
 Clone the repository to your local machine
