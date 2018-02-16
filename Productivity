@@ -17,6 +17,8 @@ usage() {
     echo
 }
 
+cd "$(realpath "$BASH_SOURCE" | xargs dirname)"
+
 while getopts ":abcfhns" opt; do
     if [ $OPTIND -eq 1 -o $OPTIND -gt 2 ]
     then
